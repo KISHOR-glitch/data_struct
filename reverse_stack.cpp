@@ -6,19 +6,19 @@ class Solution {
 public:
   
 
- void sortStack(stack<int> &st) {
+ void rStack(stack<int> &st) {
         if (st.empty()) return;
 
         int x = st.top();
         st.pop();
 
-        sortStack(st);
+        rStack(st);
 
         insertSorted(st, x);
     }
     
     void insertSorted(stack<int> &st, int x) {
-        if (st.empty() || st.top() <= x) {
+        if (st.empty() ) {
             st.push(x);
             return;
         }
@@ -44,8 +44,18 @@ int main() {
     st.push(3);
     st.push(2);
 
+    while (!st.empty()) {
+        cout << st.top() << " ";
+        st.pop();
+    }
+
+     st.push(4);
+    st.push(1);
+    st.push(3);
+    st.push(2);
+
     Solution obj;
-    obj.sortStack(st);
+    obj.rStack(st);
 
     cout << "Sorted Stack (top to bottom): ";
 
