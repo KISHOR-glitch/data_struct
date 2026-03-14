@@ -1,18 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int  subsets(vector<int>arr){
+void printSubsets(vector<int>&arr, vector<int>&ans,int i){
+if(i == arr.size()){
+for(int val: ans){
+    cout<<val<<" ";
+}
+cout<<endl;
+return;
+}
+ans.push_back(arr[i]);
+printSubsets(arr,ans,i+1);
 
-    for(int i=0;i<arr.size();i++){
-        for(int j=i;j<arr.size();j++){
-            cout<<arr[j]<<endl;
-        }
-    }
+ans.pop_back();//backtrack
+printSubsets(arr,ans,i+1);
+
+
 }
 
 int main(){
     vector<int>arr={1,2,3};
-    cout<< subsets(arr);
+    vector<int>ans;
+    printSubsets(arr,ans,0);
 
     return 0;
 }
