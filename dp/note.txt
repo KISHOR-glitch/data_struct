@@ -1,0 +1,25 @@
+dp 
+those who forget the past are condemned to repeat it
+
+1st approach
+top down
+recursion + memoization
+
+2nd approach
+bottom-up 
+tabulization
+
+and applying space optimization
+ummary
+
+Recursion is used because:
+
+many algorithms are naturally recursive
+
+it helps derive the solution
+
+it simplifies tree/graph/backtracking problems
+
+it is often the first step in DP design
+
+But when possible, the final optimized implementation may use loops.
